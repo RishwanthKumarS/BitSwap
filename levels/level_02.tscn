@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ce276t34fj4ts"]
+
+[ext_resource type="Script" uid="uid://biwemasybab4k" path="res://levels/scripts/level.gd" id="1_g685p"]
+[ext_resource type="PackedScene" uid="uid://bcciarmhi6q6a" path="res://assets/player/player1.tscn" id="2_8yqd8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tewpt"]
+size = Vector2(142, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_we1iq"]
+
+[node name="Level" type="Node2D" unique_id=1714446325]
+script = ExtResource("1_g685p")
+player_scene = ExtResource("2_8yqd8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=910790267]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=618793878]
+position = Vector2(72, 128)
+shape = SubResource("RectangleShape2D_tewpt")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=291433838]
+position = Vector2(38, 109)
+
+[node name="Player1Spawn" type="Marker2D" parent="SpawnPoints" unique_id=2126000188]
+position = Vector2(-8, 0)
+
+[node name="Player2Spawn" type="Marker2D" parent="SpawnPoints" unique_id=503054061]
+position = Vector2(7, 0)
+
+[node name="Goal" type="Area2D" parent="." unique_id=1811190168]
+position = Vector2(131, 90)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1108416031]
+shape = SubResource("RectangleShape2D_we1iq")
