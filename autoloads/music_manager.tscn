@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://tenb1w4wny87"]
+
+[ext_resource type="Script" uid="uid://d30b607ht0q7u" path="res://autoloads/music_manager.gd" id="1_75o82"]
+[ext_resource type="AudioStream" uid="uid://dbgk4md21ugib" path="res://music/djartmusic-the-world-of-8-bit-games-301273.mp3" id="2_2phjj"]
+[ext_resource type="AudioStream" uid="uid://dwo8jqss6jptn" path="res://music/djartmusic-so-happy-with-my-8-bit-game-301275.mp3" id="3_rgnn2"]
+
+[node name="MusicManager" type="Node2D" unique_id=1196473114]
+script = ExtResource("1_75o82")
+tracks = Array[AudioStream]([ExtResource("2_2phjj"), ExtResource("3_rgnn2")])

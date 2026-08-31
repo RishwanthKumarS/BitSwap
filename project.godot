@@ -10,18 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Double Swap"
+config/name="Bit Swap"
 run/main_scene="uid://btp3bxkb3qaq3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/show_image=false
+config/icon="uid://b31kxh0j0v5kr"
 
 [autoload]
 
 PlayerManager="*uid://dfgradquy5jo1"
 LevelManager="*uid://b6mhyg6qbdcyh"
-MusicManager="*uid://d30b607ht0q7u"
 SfxManager="*uid://bfrgl635l58ui"
+MusicManager="*uid://tenb1w4wny87"
 
 [display]
 
