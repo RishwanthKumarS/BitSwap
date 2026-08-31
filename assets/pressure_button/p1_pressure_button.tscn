@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dlnxa33n4fyev"]
+
+[ext_resource type="Script" uid="uid://u2j3g6lyxtpn" path="res://assets/pressure_button/scripts/pressure_button.gd" id="1_dux56"]
+[ext_resource type="Material" uid="uid://d2rlbv7rs76we" path="res://resources/white_pixel_outline.tres" id="2_bqq2s"]
+[ext_resource type="Texture2D" uid="uid://dr3a8sfuqy6j0" path="res://sprites/blue_button.png" id="2_kac5o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tewpt"]
+radius = 6.0
+
+[node name="P1PressureButton" type="Area2D" unique_id=635290908]
+script = ExtResource("1_dux56")
+required_player_id = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1436854925]
+material = ExtResource("2_bqq2s")
+position = Vector2(0, -12)
+texture = ExtResource("2_kac5o")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=238053266]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_tewpt")

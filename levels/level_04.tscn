@@ -1,0 +1,114 @@
+[gd_scene format=4 uid="uid://btfr51bvj8avo"]
+
+[ext_resource type="Script" uid="uid://biwemasybab4k" path="res://levels/scripts/level.gd" id="1_6w184"]
+[ext_resource type="PackedScene" uid="uid://bcciarmhi6q6a" path="res://assets/player/player1.tscn" id="2_vlrfo"]
+[ext_resource type="PackedScene" uid="uid://c1m2rpaassq3o" path="res://assets/player/player2.tscn" id="3_dmyuw"]
+[ext_resource type="PackedScene" uid="uid://smoxavjoi3pk" path="res://assets/goal.tscn" id="4_b3fh1"]
+[ext_resource type="PackedScene" uid="uid://c1nn2uwohdfc4" path="res://assets/player_camera/player_camera.tscn" id="5_nkw3h"]
+[ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="6_kf744"]
+[ext_resource type="PackedScene" uid="uid://48em6askghwt" path="res://assets/door/door.tscn" id="7_e7ppy"]
+[ext_resource type="Material" uid="uid://d2rlbv7rs76we" path="res://resources/white_pixel_outline.tres" id="8_hdakc"]
+[ext_resource type="Texture2D" uid="uid://dpo82fsv3sqed" path="res://sprites/pink_door.png" id="9_6w184"]
+[ext_resource type="Texture2D" uid="uid://duwj3koopbjg7" path="res://sprites/blue_door.png" id="9_7qqq0"]
+[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://tile.png" id="10_7ehwn"]
+[ext_resource type="PackedScene" uid="uid://cqy7ki5t6m5kq" path="res://assets/pressure_button/p2_pressure_button.tscn" id="11_6w184"]
+[ext_resource type="PackedScene" uid="uid://dlnxa33n4fyev" path="res://assets/pressure_button/p1_pressure_button.tscn" id="11_7l03k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7ibo"]
+texture = ExtResource("10_7ehwn")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_tewpt"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_q7ibo")
+
+[node name="Level" type="Node2D" unique_id=1714446325]
+script = ExtResource("1_6w184")
+player1_scene = ExtResource("2_vlrfo")
+player2_scene = ExtResource("3_dmyuw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=345608285]
+offset_left = -260.0
+offset_top = -213.0
+offset_right = 553.0
+offset_bottom = 406.0
+color = Color(0, 0, 0, 1)
+
+[node name="Goal" parent="." unique_id=142001699 instance=ExtResource("4_b3fh1")]
+position = Vector2(390, 87)
+
+[node name="PlayerCamera" parent="." unique_id=433515532 instance=ExtResource("5_nkw3h")]
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=498656089]
+offset_left = -11.0
+offset_top = 24.0
+offset_right = 162.0
+offset_bottom = 74.0
+theme_override_fonts/normal_font = ExtResource("6_kf744")
+bbcode_enabled = true
+text = "[wave]And, of course, only Pink can open pink doors[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=539002875]
+offset_left = 158.0
+offset_top = 25.0
+offset_right = 331.0
+offset_bottom = 75.0
+theme_override_fonts/normal_font = ExtResource("6_kf744")
+bbcode_enabled = true
+text = "[wave]Make a run for it![/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Door" parent="." unique_id=1202665509 instance=ExtResource("7_e7ppy")]
+position = Vector2(170, 55)
+buttons = Array[NodePath]([NodePath("../P2PressureButton")])
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1420011268]
+material = ExtResource("8_hdakc")
+texture = ExtResource("9_6w184")
+
+[node name="Door2" parent="." unique_id=1766333036 instance=ExtResource("7_e7ppy")]
+position = Vector2(315, 57)
+buttons = Array[NodePath]([NodePath("../P1PressureButton")])
+
+[node name="Sprite2D" type="Sprite2D" parent="Door2" unique_id=47136833]
+material = ExtResource("8_hdakc")
+texture = ExtResource("9_7qqq0")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1172112734]
+tile_map_data = PackedByteArray("AAD+/wIAAAAHAAAAAAD+/wMAAAAHAAAAAAD+/wQAAAAHAAAAAAD+/wUAAAAHAAAAAAD+/wYAAAAHAAAAAAD//wcAAAAEAAAAAAAAAAcAAAAEAAAAAAABAAcAAAAEAAAAAAACAAcAAAAEAAAAAAADAAcAAAAEAAAAAAD+/wcAAAAIAAAAAAD+////AAAIAAAAAAD/////AAAFAAAAAAAAAP//AAAFAAAAAAABAP//AAAFAAAAAAACAP//AAAFAAAAAAADAP//AAAFAAAAAAAEAP//AAAFAAAAAAAFAP//AAAFAAAAAAAGAP//AAAFAAAAAAAHAP//AAAFAAAAAAAIAP//AAAFAAAAAAAJAP//AAAFAAAAAAAKAP//AAAFAAAAAAALAP//AAAFAAAAAAAMAP//AAAFAAAAAAANAP//AAAFAAAAAAAOAP//AAAFAAAAAAAPAP//AAAFAAAAAAD+/wAAAAAHAAAAAAD+/wEAAAAHAAAAAAAEAAcAAAAEAAAAAAAFAAcAAAAEAAAAAAAGAAcAAAAEAAAAAAAHAAcAAAAEAAAAAAAIAAcAAAAEAAAAAAAJAAcAAAAEAAAAAAAKAAcAAAAEAAAAAAAMAAcAAAAEAAAAAAANAAcAAAAEAAAAAAAOAAcAAAAEAAAAAAAPAAcAAAAEAAAAAAAJAPr/AAAIAAAAAAAJAPv/AAAIAAAAAAAJAPz/AAAIAAAAAAAJAP3/AAAIAAAAAAAJAP7/AAAIAAAAAAAKAPr/AAAIAAAAAAAKAPv/AAAIAAAAAAAKAPz/AAAIAAAAAAAKAP3/AAAIAAAAAAAKAP7/AAAIAAAAAAALAPr/AAAIAAAAAAALAPv/AAAIAAAAAAALAPz/AAAIAAAAAAALAP3/AAAIAAAAAAALAP7/AAAIAAAAAAAWAP//AAAFAAAAAAAWAAcAAAAEAAAAAAAXAP//AAAFAAAAAAAXAAcAAAAEAAAAAAAYAP//AAAFAAAAAAAYAAcAAAAEAAAAAAAZAP//AAAFAAAAAAAZAAcAAAAEAAAAAAAaAP//AAAFAAAAAAAaAAcAAAAEAAAAAAAbAP//AAAIAAAAAAAbAAAAAAAGAAAAAAAbAAEAAAAGAAAAAAAbAAIAAAAGAAAAAAAbAAMAAAAGAAAAAAAbAAQAAAAGAAAAAAAbAAUAAAAGAAAAAAAbAAYAAAAGAAAAAAAbAAcAAAAIAAAAAAAQAP//AAAFAAAAAAARAP//AAAFAAAAAAASAP//AAAFAAAAAAATAP//AAAFAAAAAAAUAP//AAAFAAAAAAAVAP//AAAFAAAAAAALAAcAAAAEAAAAAAAQAAcAAAAEAAAAAAARAAcAAAAEAAAAAAASAAcAAAAEAAAAAAATAAcAAAAEAAAAAAAUAAcAAAAEAAAAAAAVAAcAAAAEAAAAAAASAPr/AAAIAAAAAAASAPv/AAAIAAAAAAASAPz/AAAIAAAAAAASAP3/AAAIAAAAAAASAP7/AAAIAAAAAAATAPr/AAAIAAAAAAATAPv/AAAIAAAAAAATAPz/AAAIAAAAAAATAP3/AAAIAAAAAAATAP7/AAAIAAAAAAAUAPr/AAAIAAAAAAAUAPv/AAAIAAAAAAAUAPz/AAAIAAAAAAAUAP3/AAAIAAAAAAAUAP7/AAAIAAAAAAA=")
+tile_set = SubResource("TileSet_tewpt")
+
+[node name="P2PressureButton" parent="." unique_id=1020909721 instance=ExtResource("11_6w184")]
+position = Vector2(92, 118)
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=291433838]
+position = Vector2(14, 112)
+
+[node name="Player2Spawn" type="Marker2D" parent="SpawnPoints" unique_id=503054061]
+position = Vector2(-14, 0)
+
+[node name="Player1Spawn" type="Marker2D" parent="SpawnPoints" unique_id=2126000188]
+position = Vector2(11, 0)
+
+[node name="P1PressureButton" parent="." unique_id=635290908 instance=ExtResource("11_7l03k")]
+position = Vector2(285, 118)

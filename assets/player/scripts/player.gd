@@ -9,9 +9,9 @@ class_name Player
 @export var acceleration: float = 1800.0
 @export var friction: float = 2200.0
 @export var jump_velocity: float = -420.0
-@export var gravity: float = 1400.0
+@export var gravity: float = 1600.0
 @export var max_fall_speed: float = 900.0
-@export var coyote_time: float = 0.12        # grace period to jump after leaving a ledge
+@export var coyote_time: float = 0.8        # grace period to jump after leaving a ledge
 @export var jump_buffer_time: float = 0.12   # grace period if jump pressed just before landing
 
 @export var idle_frames: Array[int] = [0, 1]

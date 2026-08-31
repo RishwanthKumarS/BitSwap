@@ -4,12 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bcciarmhi6q6a" path="res://assets/player/player1.tscn" id="2_pdtm5"]
 [ext_resource type="PackedScene" uid="uid://c1nn2uwohdfc4" path="res://assets/player_camera/player_camera.tscn" id="3_81a5f"]
 [ext_resource type="PackedScene" uid="uid://c1m2rpaassq3o" path="res://assets/player/player2.tscn" id="3_gg43x"]
-[ext_resource type="Texture2D" uid="uid://5li8vlltj04c" path="res://icon.svg" id="4_q7ibo"]
+[ext_resource type="PackedScene" uid="uid://smoxavjoi3pk" path="res://assets/goal.tscn" id="4_cg8v6"]
 [ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://tile.png" id="5_mllcm"]
 [ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="7_cg8v6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_we1iq"]
-size = Vector2(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7ibo"]
 texture = ExtResource("5_mllcm")
@@ -57,15 +54,8 @@ position = Vector2(-14, 0)
 [node name="Player1Spawn" type="Marker2D" parent="SpawnPoints" unique_id=2126000188]
 position = Vector2(11, 0)
 
-[node name="Goal" type="Area2D" parent="." unique_id=1811190168]
+[node name="Goal" parent="." unique_id=142001699 instance=ExtResource("4_cg8v6")]
 position = Vector2(296, 87)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1108416031]
-shape = SubResource("RectangleShape2D_we1iq")
-
-[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=1642270789]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_q7ibo")
 
 [node name="PlayerCamera" parent="." unique_id=433515532 instance=ExtResource("3_81a5f")]
 
@@ -73,10 +63,12 @@ texture = ExtResource("4_q7ibo")
 tile_map_data = PackedByteArray("AAD+/wIAAAAHAAAAAAD+/wMAAAAHAAAAAAD+/wQAAAAHAAAAAAD+/wUAAAAHAAAAAAD+/wYAAAAHAAAAAAD//wEAAAAFAAAAAAAAAAEAAAAFAAAAAAABAAEAAAAFAAAAAAACAAEAAAAFAAAAAAADAAEAAAAFAAAAAAAEAAEAAAAFAAAAAAAFAAEAAAAFAAAAAAAFAAcAAAAEAAAAAAAGAAEAAAAFAAAAAAAHAAEAAAAFAAAAAAAIAAEAAAAFAAAAAAAJAAEAAAAFAAAAAAAKAAEAAAAFAAAAAAALAAEAAAAFAAAAAAAMAAEAAAAFAAAAAAANAAEAAAAFAAAAAAAOAAEAAAAFAAAAAAAPAAEAAAAFAAAAAAAPAAcAAAAEAAAAAAAQAAEAAAAFAAAAAAAQAAcAAAAEAAAAAAARAAEAAAAFAAAAAAARAAcAAAAEAAAAAAASAAEAAAAFAAAAAAASAAcAAAAEAAAAAAATAAEAAAAFAAAAAAATAAcAAAAEAAAAAAAUAAEAAAAFAAAAAAAUAAcAAAAEAAAAAAAVAAIAAAAGAAAAAAAVAAMAAAAGAAAAAAAVAAQAAAAGAAAAAAAVAAUAAAAGAAAAAAAVAAYAAAAGAAAAAAD//wcAAAAEAAAAAAAAAAcAAAAEAAAAAAABAAcAAAAEAAAAAAACAAcAAAAEAAAAAAADAAcAAAAEAAAAAAAEAAcAAAAEAAAAAAD+/wcAAAAIAAAAAAD+/wEAAAAIAAAAAAAVAAEAAAAIAAAAAAAVAAcAAAAIAAAAAAAGAAcAAAAEAAAAAAAHAAcAAAAEAAAAAAAIAAcAAAAEAAAAAAAJAAcAAAAEAAAAAAAKAAcAAAAEAAAAAAALAAcAAAAEAAAAAAAMAAcAAAAEAAAAAAANAAcAAAAEAAAAAAAOAAcAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_tewpt")
 
-[node name="Label" type="Label" parent="." unique_id=1905238886]
+[node name="Label" type="RichTextLabel" parent="." unique_id=498656089]
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 248.0
 offset_bottom = 87.0
-theme_override_fonts/font = ExtResource("7_cg8v6")
-text = "Press E to swap characters"
+theme_override_fonts/normal_font = ExtResource("7_cg8v6")
+bbcode_enabled = true
+text = "[wave]Press E to swap characters[/wave]"
+autowrap_mode = 0
