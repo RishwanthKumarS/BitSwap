@@ -4,18 +4,37 @@
 [ext_resource type="PackedScene" uid="uid://bcciarmhi6q6a" path="res://assets/player/player1.tscn" id="2_pdtm5"]
 [ext_resource type="PackedScene" uid="uid://c1nn2uwohdfc4" path="res://assets/player_camera/player_camera.tscn" id="3_81a5f"]
 [ext_resource type="PackedScene" uid="uid://c1m2rpaassq3o" path="res://assets/player/player2.tscn" id="3_gg43x"]
-[ext_resource type="Texture2D" uid="uid://dmekf05c6da64" path="res://tile.png" id="5_mllcm"]
+[ext_resource type="Texture2D" uid="uid://5li8vlltj04c" path="res://icon.svg" id="4_q7ibo"]
+[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://tile.png" id="5_mllcm"]
+[ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="7_cg8v6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_we1iq"]
+size = Vector2(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mllcm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7ibo"]
 texture = ExtResource("5_mllcm")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_tewpt"]
 physics_layer_0/collision_layer = 1
-sources/2 = SubResource("TileSetAtlasSource_mllcm")
+sources/0 = SubResource("TileSetAtlasSource_q7ibo")
 
 [node name="Level" type="Node2D" unique_id=1714446325]
 script = ExtResource("1_sjb42")
@@ -23,28 +42,41 @@ player1_scene = ExtResource("2_pdtm5")
 player2_scene = ExtResource("3_gg43x")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=345608285]
-visible = false
-offset_left = -55.0
-offset_right = 224.0
-offset_bottom = 186.0
+offset_left = -260.0
+offset_top = -213.0
+offset_right = 553.0
+offset_bottom = 406.0
+color = Color(0, 0, 0, 1)
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=291433838]
-position = Vector2(38, 104)
-
-[node name="Player1Spawn" type="Marker2D" parent="SpawnPoints" unique_id=2126000188]
-position = Vector2(-8, 0)
+position = Vector2(14, 112)
 
 [node name="Player2Spawn" type="Marker2D" parent="SpawnPoints" unique_id=503054061]
-position = Vector2(7, 0)
+position = Vector2(-14, 0)
+
+[node name="Player1Spawn" type="Marker2D" parent="SpawnPoints" unique_id=2126000188]
+position = Vector2(11, 0)
 
 [node name="Goal" type="Area2D" parent="." unique_id=1811190168]
-position = Vector2(131, 90)
+position = Vector2(296, 87)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1108416031]
 shape = SubResource("RectangleShape2D_we1iq")
 
+[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=1642270789]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_q7ibo")
+
 [node name="PlayerCamera" parent="." unique_id=433515532 instance=ExtResource("3_81a5f")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1172112734]
-tile_map_data = PackedByteArray("AAAIAAgAAgAAAAAAAAAIAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAHAAgAAgAAAAAAAAAGAAgAAgAAAAAAAAAGAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAFAAgAAgAAAAAAAAAEAAgAAgAAAAAAAAAEAAcAAgAAAAAAAAADAAcAAgAAAAAAAAACAAcAAgAAAAAAAAACAAgAAgAAAAAAAAADAAgAAgAAAAAAAAABAAgAAgAAAAAAAAABAAcAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wIAAAAHAAAAAAD+/wMAAAAHAAAAAAD+/wQAAAAHAAAAAAD+/wUAAAAHAAAAAAD+/wYAAAAHAAAAAAD//wEAAAAFAAAAAAAAAAEAAAAFAAAAAAABAAEAAAAFAAAAAAACAAEAAAAFAAAAAAADAAEAAAAFAAAAAAAEAAEAAAAFAAAAAAAFAAEAAAAFAAAAAAAFAAcAAAAEAAAAAAAGAAEAAAAFAAAAAAAHAAEAAAAFAAAAAAAIAAEAAAAFAAAAAAAJAAEAAAAFAAAAAAAKAAEAAAAFAAAAAAALAAEAAAAFAAAAAAAMAAEAAAAFAAAAAAANAAEAAAAFAAAAAAAOAAEAAAAFAAAAAAAPAAEAAAAFAAAAAAAPAAcAAAAEAAAAAAAQAAEAAAAFAAAAAAAQAAcAAAAEAAAAAAARAAEAAAAFAAAAAAARAAcAAAAEAAAAAAASAAEAAAAFAAAAAAASAAcAAAAEAAAAAAATAAEAAAAFAAAAAAATAAcAAAAEAAAAAAAUAAEAAAAFAAAAAAAUAAcAAAAEAAAAAAAVAAIAAAAGAAAAAAAVAAMAAAAGAAAAAAAVAAQAAAAGAAAAAAAVAAUAAAAGAAAAAAAVAAYAAAAGAAAAAAD//wcAAAAEAAAAAAAAAAcAAAAEAAAAAAABAAcAAAAEAAAAAAACAAcAAAAEAAAAAAADAAcAAAAEAAAAAAAEAAcAAAAEAAAAAAD+/wcAAAAIAAAAAAD+/wEAAAAIAAAAAAAVAAEAAAAIAAAAAAAVAAcAAAAIAAAAAAAGAAcAAAAEAAAAAAAHAAcAAAAEAAAAAAAIAAcAAAAEAAAAAAAJAAcAAAAEAAAAAAAKAAcAAAAEAAAAAAALAAcAAAAEAAAAAAAMAAcAAAAEAAAAAAANAAcAAAAEAAAAAAAOAAcAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_tewpt")
+
+[node name="Label" type="Label" parent="." unique_id=1905238886]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 248.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("7_cg8v6")
+text = "Press E to swap characters"

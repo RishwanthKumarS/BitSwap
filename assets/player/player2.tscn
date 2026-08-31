@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://c1m2rpaassq3o"]
 
 [ext_resource type="Script" uid="uid://deoketqaxmaq3" path="res://assets/player/scripts/player.gd" id="1_b5f0o"]
-[ext_resource type="Texture2D" uid="uid://dxe5ccq08cpsr" path="res://player2.png" id="2_b5f0o"]
+[ext_resource type="Texture2D" uid="uid://dxe5ccq08cpsr" path="res://sprites/player2.png" id="2_b5f0o"]
+[ext_resource type="Material" uid="uid://d2rlbv7rs76we" path="res://resources/white_pixel_outline.tres" id="2_xy27d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tewpt"]
 height = 26.0
 
 [node name="Player2" type="CharacterBody2D" unique_id=1192658596]
+modulate = Color(1.1638972, 1.1638972, 1.1638972, 1)
 script = ExtResource("1_b5f0o")
 player_id = 2
+active_outline_material = ExtResource("2_xy27d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=318495322]
 position = Vector2(0, -13)

@@ -19,6 +19,7 @@ class_name Player
 @export var air_frame: int = 5
 @export var idle_fps: float = 5.0
 @export var walk_fps: float = 10.0
+@export var active_outline_material: ShaderMaterial  # e.g. white_pixel_outline.tres
 
 var is_active: bool = false
 var coyote_timer: float = 0.0
@@ -125,5 +126,4 @@ func set_active(active: bool) -> void:
 	is_active = active
 	velocity = Vector2.ZERO
 	if sprite:
-		# Simple visual cue: dim whichever player isn't being controlled.
-		sprite.modulate = Color.WHITE if active else Color(0.65, 0.65, 0.7, 1.0)
+		sprite.material = active_outline_material if active else null

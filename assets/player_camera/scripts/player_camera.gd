@@ -6,6 +6,7 @@ class_name PlayerCamera
 
 @export var follow_speed: float = 6.0     # higher = snappier
 @export var snap_on_ready: bool = true
+@export var vertical_offset: float = -40.0  # negative = frame upward from player center
 
 
 func _ready() -> void:
@@ -16,8 +17,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var target: Player = PlayerManager.get_active_player()
 	if target:
+		var target_pos := target.global_position + Vector2(0, vertical_offset)
+		# Exponential smoothing — frame-rate independent and glassy-smooth.
 		global_position = global_position.lerp(
-			target.global_position,
+			target_pos,
 			1.0 - exp(-follow_speed * delta)
 		)
 
@@ -25,4 +28,4 @@ func _physics_process(delta: float) -> void:
 func _snap_to_active() -> void:
 	var target: Player = PlayerManager.get_active_player()
 	if target:
-		global_position = target.global_position
+		global_position = target.global_position + Vector2(0, vertical_offset)
