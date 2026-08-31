@@ -38,8 +38,8 @@ func swap_player() -> void:
 		return
 	active_index = (active_index + 1) % players.size()
 	_swap_timer = swap_cooldown
+	SfxManager.play("character_swap")
 	_update_active_states()
-
 
 func _update_active_states() -> void:
 	if players.is_empty():

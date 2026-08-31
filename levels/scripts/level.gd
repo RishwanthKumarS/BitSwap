@@ -41,4 +41,5 @@ func _on_goal_body_entered(body: Node) -> void:
 		# ends up freeing CollisionObject2D nodes as part of the scene swap —
 		# doing that mid-physics-callback throws an engine warning/error.
 		# Defer it to idle time instead.
+		SfxManager.play("level_clear")
 		LevelManager.call_deferred("next_level")

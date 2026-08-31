@@ -11,7 +11,7 @@ class_name Player
 @export var jump_velocity: float = -420.0
 @export var gravity: float = 1600.0
 @export var max_fall_speed: float = 900.0
-@export var coyote_time: float = 0.8        # grace period to jump after leaving a ledge
+@export var coyote_time: float = 0.12        # grace period to jump after leaving a ledge
 @export var jump_buffer_time: float = 0.12   # grace period if jump pressed just before landing
 
 @export var idle_frames: Array[int] = [0, 1]
@@ -73,7 +73,8 @@ func _process_active(delta: float) -> void:
 		velocity.y = jump_velocity
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0
-
+		SfxManager.play("jump")
+		
 	# --- Variable jump height: release early to cut the jump short ---
 	if Input.is_action_just_released("jump") and velocity.y < 0.0:
 		velocity.y *= 0.5

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1m2rpaassq3o" path="res://assets/player/player2.tscn" id="3_cwmx8"]
 [ext_resource type="PackedScene" uid="uid://smoxavjoi3pk" path="res://assets/goal.tscn" id="4_05651"]
 [ext_resource type="PackedScene" uid="uid://c1nn2uwohdfc4" path="res://assets/player_camera/player_camera.tscn" id="5_xxuo2"]
-[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://tile.png" id="6_liqpl"]
+[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://sprites/tile.png" id="6_liqpl"]
 [ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="7_4c076"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7ibo"]
@@ -70,6 +70,18 @@ offset_right = 253.0
 offset_bottom = 88.0
 theme_override_fonts/normal_font = ExtResource("7_4c076")
 bbcode_enabled = true
-text = "[wave]Jump on the other character to get across[/wave]"
+text = "[wave]Jump on the other BitGuy to get across![/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=235241392]
+offset_left = 53.0
+offset_top = 147.0
+offset_right = 273.0
+offset_bottom = 180.0
+theme_override_fonts/normal_font = ExtResource("7_4c076")
+bbcode_enabled = true
+text = "[wave]Press R to restart
+(if you want)[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://btp3bxkb3qaq3"]
+
+[ext_resource type="Script" uid="uid://3ulsmwm5dco3" path="res://levels/main_menu/scripts/main_menu.gd" id="1_nt5r4"]
+[ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="2_u4e7g"]
+[ext_resource type="StyleBox" uid="uid://c3qsrpphlptnt" path="res://resources/black_button.tres" id="3_86fa0"]
+[ext_resource type="StyleBox" uid="uid://cvihqo7armwcu" path="res://resources/white_button.tres" id="4_h370v"]
+
+[node name="MainMenu" type="Control" unique_id=303919844 node_paths=PackedStringArray("play_button", "level_select_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nt5r4")
+play_button = NodePath("MarginContainer/VBoxContainer/PlayButton")
+level_select_button = NodePath("MarginContainer/VBoxContainer/LevelSelectButton")
+quit_button = NodePath("MarginContainer/VBoxContainer/QuitButton")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1272089869]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2118749180]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -68.0
+offset_right = 79.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1080885674]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1963783824]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_u4e7g")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[wave]Bit Swap[/wave]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=210529703]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u4e7g")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("3_86fa0")
+theme_override_styles/hover = ExtResource("4_h370v")
+theme_override_styles/focus = ExtResource("4_h370v")
+text = "Play"
+
+[node name="LevelSelectButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1762363732]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u4e7g")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("3_86fa0")
+theme_override_styles/hover = ExtResource("4_h370v")
+theme_override_styles/focus = ExtResource("4_h370v")
+text = "Select Level"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1441394753]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u4e7g")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("3_86fa0")
+theme_override_styles/hover = ExtResource("4_h370v")
+theme_override_styles/focus = ExtResource("4_h370v")
+text = "Quit"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=698071131]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_u4e7g")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[wave]made by LordAzmaveth[/wave]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

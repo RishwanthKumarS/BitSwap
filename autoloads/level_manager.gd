@@ -1,9 +1,8 @@
 extends Node
-# Autoload: LevelManager
 
 signal level_loading(level_path: String)
 signal level_loaded(level_path: String)
-signal levels_progress_changed   # emitted whenever completion state changes
+signal levels_progress_changed
 
 @export var levels: Array[String] = [
 	"res://levels/level_01.tscn",
@@ -15,6 +14,7 @@ signal levels_progress_changed   # emitted whenever completion state changes
 ]
 
 @export var level_select_scene: String = "res://levels/level_select/level_select.tscn"
+@export var game_complete_scene: String = "res://levels/game_complete/game_complete.tscn"
 
 const SAVE_PATH := "user://progress.cfg"
 
@@ -69,7 +69,7 @@ func next_level() -> void:
 	if current_level_index + 1 < levels.size():
 		load_level_by_index(current_level_index + 1)
 	else:
-		load_level_select()
+		_change_scene(game_complete_scene)
 
 
 func restart_level() -> void:

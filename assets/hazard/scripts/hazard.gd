@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body is Player:
+		SfxManager.play("death")
 		# body_entered fires during the physics step; deferring avoids the
 		# "removing a CollisionObject during a physics callback" error when
 		# the level scene gets torn down mid-collision-check.

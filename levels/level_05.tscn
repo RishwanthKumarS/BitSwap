@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://smoxavjoi3pk" path="res://assets/goal.tscn" id="4_oku8f"]
 [ext_resource type="PackedScene" uid="uid://c1nn2uwohdfc4" path="res://assets/player_camera/player_camera.tscn" id="5_htwx1"]
 [ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="6_0vajx"]
-[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://tile.png" id="11_ck07j"]
+[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://sprites/tile.png" id="11_ck07j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7ibo"]
 texture = ExtResource("11_ck07j")

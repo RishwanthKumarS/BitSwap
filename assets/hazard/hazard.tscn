@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://dy8jxdbac3l56"]
 
 [ext_resource type="Script" uid="uid://ddybktecf57yv" path="res://assets/hazard/scripts/hazard.gd" id="1_motca"]
+[ext_resource type="Texture2D" uid="uid://qj2jhucaktma" path="res://sprites/hazard.png" id="2_jgp72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tewpt"]
-size = Vector2(126, 20)
+size = Vector2(121, 20)
 
 [node name="Hazard" type="Area2D" unique_id=1077914334]
 script = ExtResource("1_motca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=429460731]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_tewpt")
 debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=996158268]
+position = Vector2(-29, -22)
+texture = ExtResource("2_jgp72")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1518200003]
+position = Vector2(31, -22)
+texture = ExtResource("2_jgp72")

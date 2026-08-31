@@ -61,7 +61,7 @@ func _update_door_state(instant: bool) -> void:
 	if should_open == _is_open and not instant:
 		return
 	_is_open = should_open
-
+		
 	var target_pos := _closed_position + open_offset if _is_open else _closed_position
 
 	if instant:

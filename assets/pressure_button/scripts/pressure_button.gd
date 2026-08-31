@@ -51,6 +51,7 @@ func _update_pressed_state() -> void:
 		sprite.frame = pressed_frame if is_pressed else unpressed_frame
 
 	if is_pressed:
+		SfxManager.play("button_press")
 		activated.emit()
 	else:
 		deactivated.emit()

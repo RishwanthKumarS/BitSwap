@@ -10,7 +10,7 @@
 [ext_resource type="Material" uid="uid://d2rlbv7rs76we" path="res://resources/white_pixel_outline.tres" id="8_hdakc"]
 [ext_resource type="Texture2D" uid="uid://dpo82fsv3sqed" path="res://sprites/pink_door.png" id="9_6w184"]
 [ext_resource type="Texture2D" uid="uid://duwj3koopbjg7" path="res://sprites/blue_door.png" id="9_7qqq0"]
-[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://tile.png" id="10_7ehwn"]
+[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://sprites/tile.png" id="10_7ehwn"]
 [ext_resource type="PackedScene" uid="uid://cqy7ki5t6m5kq" path="res://assets/pressure_button/p2_pressure_button.tscn" id="11_6w184"]
 [ext_resource type="PackedScene" uid="uid://dlnxa33n4fyev" path="res://assets/pressure_button/p1_pressure_button.tscn" id="11_7l03k"]
 

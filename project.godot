@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="Double Swap"
-run/main_scene="uid://5qkt7v7sw174"
+run/main_scene="uid://btp3bxkb3qaq3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 
 [autoload]
 
 PlayerManager="*uid://dfgradquy5jo1"
 LevelManager="*uid://b6mhyg6qbdcyh"
 MusicManager="*uid://d30b607ht0q7u"
+SfxManager="*uid://bfrgl635l58ui"
 
 [display]
 

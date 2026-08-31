@@ -2,21 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cq77efb6v1h30" path="res://levels/level_select/scripts/level_button.gd" id="1_cumng"]
 [ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="1_yyulh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tjpo"]
-content_margin_left = 10.0
-content_margin_top = 5.0
-content_margin_right = 10.0
-content_margin_bottom = 5.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3toue"]
-bg_color = Color(1, 1, 1, 1)
+[ext_resource type="StyleBox" uid="uid://c3qsrpphlptnt" path="res://resources/black_button.tres" id="2_utkp1"]
+[ext_resource type="StyleBox" uid="uid://cvihqo7armwcu" path="res://resources/white_button.tres" id="3_cua51"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyulh"]
 bg_color = Color(1, 1, 1, 1)
@@ -31,8 +18,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_yyulh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tjpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3toue")
+theme_override_styles/normal = ExtResource("2_utkp1")
+theme_override_styles/pressed = ExtResource("3_cua51")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yyulh")
 theme_override_styles/focus = SubResource("StyleBoxFlat_utkp1")
 text = "Level 1"

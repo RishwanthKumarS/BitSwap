@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1m2rpaassq3o" path="res://assets/player/player2.tscn" id="3_3ew82"]
 [ext_resource type="PackedScene" uid="uid://smoxavjoi3pk" path="res://assets/goal.tscn" id="4_0bj1y"]
 [ext_resource type="PackedScene" uid="uid://c1nn2uwohdfc4" path="res://assets/player_camera/player_camera.tscn" id="5_6181x"]
-[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://tile.png" id="6_j4ks3"]
+[ext_resource type="Texture2D" uid="uid://vhrg8igv326k" path="res://sprites/tile.png" id="6_j4ks3"]
 [ext_resource type="FontFile" uid="uid://b586f2icrsgmx" path="res://resources/BoldPixels.ttf" id="7_5pqto"]
 [ext_resource type="PackedScene" uid="uid://dlnxa33n4fyev" path="res://assets/pressure_button/p1_pressure_button.tscn" id="8_2wlag"]
 [ext_resource type="Material" uid="uid://d2rlbv7rs76we" path="res://resources/white_pixel_outline.tres" id="8_6181x"]
